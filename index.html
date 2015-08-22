@@ -5,12 +5,17 @@
     <title>Don't Eat the Kid</title>
     <link rel="stylesheet" type="text/css" href="style.css"></link>
     <script type="text/javascript" src="game.js"></script>
+    <script type="text/javascript">
+      function onload() {
+      go = document.getElementById("command");
+      }
+    </script>
   </head>
-  <body>
+  <body onload="onload()";>
     <section>
       <p id="desc">You are under a bed. Above you is a succulent young human.</p>
     </section>
-    <input type="text" name="command" placeholder="this is poop"></input>
-    <button id="go" onClick="poop()">go!</button>
+    <input type="text" name="command" placeholder="this is poop" id="command"></input>
+    <button id="go" onClick="preparse(command.value)">go!</button>
   </body>
 </html>

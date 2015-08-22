@@ -1,5 +1,13 @@
 end = "You ate the kid!"
 
-function poop () {
-  console.log("critical error: poop happens");
+function preparse (value) {
+  if (!!value) {
+    parse(value);
+  } else {
+    console.log("You has to do a command.");
+  }
+}
+
+function parse (value) {
+  console.log(value);
 }
