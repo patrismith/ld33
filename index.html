@@ -7,15 +7,19 @@
     <script type="text/javascript" src="game.js"></script>
     <script type="text/javascript">
       function onload() {
-      go = document.getElementById("command");
+      command = document.getElementById("command");
+      feedback = document.getElementById("feedback");
       }
     </script>
   </head>
   <body onload="onload()";>
     <section>
       <p id="desc">You are under a bed. Above you is a succulent young human.</p>
+      <p id="feedback">What will you do? Write your command in the box below and press the "go!" button.</p>
     </section>
-    <input type="text" name="command" placeholder="this is poop" id="command"></input>
-    <button id="go" onClick="preparse(command.value)">go!</button>
+    <section>
+      <input type="text" name="command" placeholder="this is poop" id="command"></input>
+      <button id="go" onClick="preparse(command.value)">go!</button>
+    </section>
   </body>
 </html>

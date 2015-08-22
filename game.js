@@ -9,5 +9,7 @@ function preparse (value) {
 }
 
 function parse (value) {
-  console.log(value);
+  if (value.toLowerCase() === "eat kid") {
+    feedback.innerHTML = "You ate the kid!"
+  }
 }
