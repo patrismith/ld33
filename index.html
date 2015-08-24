@@ -7,19 +7,35 @@
     <script type="text/javascript" src="game.js"></script>
     <script type="text/javascript">
       function onload() {
+      go = document.getElementById("go");
       command = document.getElementById("command");
       feedback = document.getElementById("feedback");
+      ending = document.getElementById("ending");
+      restart = document.getElementById("restart");
+      restart.hidden = true;
+      turnsPlayed = document.getElementById("turnsPlayed");
+      turnsPlayedCounter = 0;
       }
     </script>
   </head>
   <body onload="onload()";>
     <section>
-      <p id="desc">You are under a bed. Above you is a succulent young human.</p>
+      <h2>Don't eat the kid!</h2>
+      <h3>A one turn game by <a href="http://twitter.com/pancakemetro">@pancakemetro</a> and <a href="http://twitter.com/octaddust">@OctadDust</a> for <a href="http://ludumdare.com/compo/">LD33</a></h3>
+      <p id="desc">You are under a bed. Above you is a succulent young human. Its slow, steady breathing indicates it's in the middle of sleep. Below you are rattly floorboards. A dim glare from the hallway allows you to see other items under the bed with you: a soccer ball, a stray shoe, and an empty suitcase. There are dustbunnies in the corner.</p>
       <p id="feedback">What will you do? Write your command in the box below and press the "go!" button.</p>
     </section>
     <section>
-      <input type="text" name="command" placeholder="this is poop" id="command"></input>
-      <button id="go" onClick="preparse(command.value)">go!</button>
+      <input type="text" name="command" placeholder="Try <VERB> <SUBJECT>" id="command" onkeypress="handle(event)"></input>
+      <button id="go" onClick="preparse()">go!</button>
+    </section>
+    <section>
+      <button id="restart" onClick="restartit()">restart</button>
+    </section>
+    <section>
+      <h3 id="ending"></h3>
+      <p id="turnsPlayed">Turns played: 0</p>
+      <a href="http://twitter.com/home/?status=Don't Eat the Kid is like the best #LDJAM entry ever omg &commat;pancakemetro">twoot this</a>
     </section>
   </body>
 </html>
